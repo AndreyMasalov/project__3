@@ -1,0 +1,103 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .4);
+    visibility: hidden;
+
+    &__container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    &__window {
+        box-sizing: border-box;
+        position: relative;
+        top: 10vh;
+        width: 380px;
+        min-height: 140px;
+        padding: 32px 0 0 0;
+
+        @media (max-width: $screen-xs) {
+            width: 360px;
+        }
+
+        &_style {
+            background-color: #F2F2F2;
+            transition: top .2s;
+        }
+
+        &_active {
+            top: 20vh;
+        }
+        
+    }
+
+    &__close {
+        position: absolute;
+        top: -14px;
+        right: -46px;
+
+        @media (max-width: $screen-xs) {
+            top: -40px;
+            right: -4px;
+        }
+
+        &:hover {
+            @include hover-link;
+        }
+
+        &_style {
+            font-size: 50px;
+            font-weight: 900;
+            line-height: 50px;
+            color: $main-color;
+            cursor: pointer;
+        }
+
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 8px;
+
+        &_small {
+            font-size: 19px;
+            font-weight: 900;
+            letter-spacing: 0.6px;
+            text-align: center;
+        }
+
+    }
+
+    &__description {
+        margin-bottom: 24px;
+
+        &_small {
+            font-size: 14px;
+            font-weight: 900;
+            line-height: 22px;
+            letter-spacing: 0.6px;
+            text-align: center;
+        }
+
+        &_big {
+            letter-spacing: normal;
+        }
+
+    }
+
+    &__form-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    &_active {
+        visibility: visible;
+    }
+
+}

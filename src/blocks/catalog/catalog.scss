@@ -1,0 +1,141 @@
+.catalog {
+    background-color: #FFFFFF;
+    min-height: 1176px;
+
+    &__container {
+        max-width: $container-lg;
+        margin: $margin-center;
+        padding: 0 0 59px 0;
+
+        @media (max-width: $screen-md) {
+            max-width: $container-md;
+        }
+
+        @media (max-width: $screen-sm) {
+            max-width: $container-sm;
+            padding: 30px 0 30px 0;
+        }
+
+        @media (max-width: $screen-xs) {
+            max-width: $container-xs;
+            padding: 0 0 30px 0;
+        }
+
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 52px;
+
+        @media (max-width: $screen-sm) {
+            margin-bottom: 30px;
+        }
+
+        &_big {
+            font-size: 30px;
+            font-weight: 500;
+            letter-spacing: -0.2px;
+            color: #0D0D0D;
+            text-transform: uppercase;
+            text-align: center;
+
+            @media (max-width: $screen-sm) {
+                font-size: 24px;
+            }
+
+        }
+
+    }
+
+    &__tab-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 59px;
+
+        @media (max-width: $screen-sm) {
+            margin-bottom: 30px;
+        }
+
+    }
+
+    &__tab {
+        box-sizing: border-box;
+        width: 200px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: skewX(-22deg);
+        margin: 0 5px;
+        border-width: 2px;
+
+        @media (max-width: $screen-sm) {
+            width: 150px;
+            height: 40px;
+        }
+
+        &:hover {
+            border-width: 0;
+            color: #FFFFFF;
+            @include hover-button;
+        }
+
+        &_big {
+            font-size: 18px;
+            font-weight: 300;
+            color: #6B6B6B;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-style: solid;
+            border-color: #E8E8E8;
+
+            @media (max-width: $screen-sm) {
+                font-size: 16px;
+            }
+
+            @media (max-width: $screen-xs) {
+                font-size: 13px;
+                text-align: center;
+            }
+
+        }
+
+        &_active {
+            color: #FFFFFF;
+            background-color: $main-color;
+            border: none;
+        }
+
+    }
+
+    &__text {
+        display: block;
+        transform: skewX(22deg);
+    }
+    
+    &__card-wrapper {
+        display: none;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @media (max-width: $screen-md) {
+            justify-content: center;
+        }
+
+        &_active {
+            display: flex;
+        }
+
+    }
+
+    &__card {
+        margin-bottom: 21px;
+
+        @media (max-width: $screen-md) {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+    }
+
+}

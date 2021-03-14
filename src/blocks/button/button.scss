@@ -1,0 +1,31 @@
+.button {
+    background: $main-color;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        @include hover-button;
+    }
+
+    &_small {
+        font-size: 12px;
+        font-weight: 100;
+        letter-spacing: 0.2px;
+    }
+
+    &_middle {
+        font-size: 14px;
+        font-weight: 100;
+        letter-spacing: 0.2px;
+    }
+
+    &_big {
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 0.2px;
+    }
+
+}

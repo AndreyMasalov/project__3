@@ -1,0 +1,18 @@
+@mixin slider__buttons {
+    position: absolute;
+    background: none;
+    border: none;
+    top: 50%;
+    transform: translateY(-65%);
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+@mixin hover-link {
+    color: $main-color_focus;
+}
+
+@mixin hover-button {
+    background: $main-color_focus;
+}

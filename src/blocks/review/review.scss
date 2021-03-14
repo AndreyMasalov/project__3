@@ -1,0 +1,149 @@
+.review {
+    background-color: #FFFFFF;
+    min-height: 971px;
+
+    &__container {
+        max-width: $container-lg;
+        margin: $margin-center;
+        padding: 0 0 48px 0;
+
+        @media (max-width: $screen-md) {
+            max-width: $container-md;
+        }
+
+        @media (max-width: $screen-sm) {
+            max-width: $container-sm;
+            padding: 0 0 30px 0;
+        }
+
+        @media (max-width: $screen-xs) {
+            max-width: $container-xs;
+        }
+
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 56px;
+
+        @media (max-width: $screen-sm) {
+            margin-bottom: 30px;
+        }
+
+        &_big {
+            font-size: 30px;
+            font-weight: 900;
+            color: $review_text-color;
+            text-align: center;
+            text-transform: uppercase;
+
+            @media (max-width: $screen-sm) {
+                font-size: 24px;
+            }
+
+        }
+
+    }
+
+    &__item {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 50px;
+
+        @media (max-width: $screen-md) {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+    }
+
+    &__image-wrapper {
+        max-width: 169px;
+        max-height: 169px;
+        margin: 0;
+
+        @media (max-width: $screen-md) {
+            margin-bottom: 20px;
+        }
+
+    }
+
+    &__image {
+        max-width: 100%;
+    }
+
+    &__text-wrapper {
+        max-width: 672px;
+        margin-left: 61px;
+
+        @media (max-width: $screen-md) {
+            margin-left: 0;
+        }
+
+        @media (max-width: $screen-sm) {
+            max-width: none;
+        }
+
+    }
+
+    &__name {
+
+        @media (max-width: $screen-md) {
+            text-align: center;
+        }
+
+        &_big {
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 0.9px;
+            color: $review_text-color;
+        }
+
+    }
+
+    &__statistics {
+        margin-bottom: 10px;
+
+        @media (max-width: $screen-md) {
+            text-align: center;
+        }
+        
+        &_small {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            line-height: 20px;
+            color: #646464;
+        }
+
+    }
+
+    &__description {
+        margin: 0;
+        margin-bottom: 10px;
+
+        &_small-1 {
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            line-height: 25px;
+            color: $review_text-color;
+
+            @media (max-width: $screen-sm) {
+                font-size: 14px;
+            }
+
+        }
+
+        &_small-2 {
+            font-weight: 300;
+        }
+
+    }
+
+}

@@ -1,0 +1,143 @@
+.features {
+    background-color: #F6F6F6;
+    min-height: 473px;
+
+    &__container {
+        box-sizing: border-box;
+        max-width: $container-lg;
+        margin: $margin-center;
+        padding: 72px 0 64px 0;
+
+        @media (max-width: $screen-md) {
+            max-width: $container-md;
+        }
+
+        @media (max-width: $screen-sm) {
+            max-width: $container-sm;
+            padding: 30px 0 30px 0;
+        }
+        
+        @media (max-width: $screen-xs) {
+            max-width: $container-xs;
+        }
+
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 62px;
+
+        @media (max-width: $screen-sm) {
+            margin-bottom: 30px;
+        }
+
+        &_big {
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            color: $features_text-color;
+            text-align: center;
+            text-transform: uppercase;
+
+            @media (max-width: $screen-sm) {
+                font-size: 24px;
+            }
+
+        }
+
+    }
+
+    &__icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @media (max-width: $screen-sm) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+    }
+
+    &__icon-wrapper {
+        width: 240px;
+        margin: 0 11px;
+
+        @media (max-width: $screen-sm) {
+            margin-bottom: 30px;
+        }
+
+    }
+
+    &__icon {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 40px;
+
+        @media (max-width: $screen-sm) {
+            margin-bottom: 10px;
+        }
+
+        &_animated {
+            animation-name: heartbeat;
+            animation-duration: 1.4s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+
+            &:hover {
+                animation-play-state: paused;
+            }
+
+        }
+
+    }
+
+    &__icon-title {
+        margin-bottom: 26px;
+
+        @media (max-width: $screen-sm) {
+            margin-bottom: 20px;
+        }
+
+        &_big {
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            color: $features_text-color;
+            text-align: center;
+
+            @media (max-width: $screen-sm) {
+                font-size: 16px;
+            }
+
+        }
+        
+    }
+
+    &__icon-description {
+
+        &_small {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            line-height: 18px;
+            color: $features_text-color;
+            text-align: center;
+        }
+
+    }
+
+    &__link {
+
+        &:hover {
+            @include hover-link;
+        }
+
+        &_small {
+            color: $main-color;
+        }
+
+    }
+
+}

@@ -1,0 +1,276 @@
+.promo {
+    background: url('../img/promo.jpg') center center/cover no-repeat;
+    min-height: 650px;
+
+    @media (max-width: $screen-md) {
+        background-position: 30% 0;
+    }
+
+    @media (max-width: $screen-sm) {
+        background-position: 50% 0;
+        min-height: 400px;
+    }
+
+    @media (max-width: $screen-xs) {
+        background-position: 30% 0;
+    }
+    
+    &__container {
+        box-sizing: border-box;
+        max-width: $container-lg;
+        margin: $margin-center;
+        padding: 21px 0 96px 0;
+
+        @media (max-width: $screen-md) {
+            max-width: $container-md;
+        }
+
+        @media (max-width: $screen-sm) {
+            max-width: $container-sm;
+            padding: 21px 0 93px 0;
+        }
+
+        @media (max-width: $screen-xs) {
+            max-width: $container-xs;
+        }
+
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 89px;
+
+        @media (max-width: $screen-sm) {
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: $screen-xs) {
+            margin-bottom: 60px;
+        }
+        
+    }
+
+    &__logo-wrapper {
+        width: 33.33%;
+        margin: 0;
+
+        @media (max-width: $screen-xs) {
+            width: 50%;
+        }
+
+    }
+
+    &__header-link {
+        display: inline-block;
+
+    }
+
+    &__logo {
+        max-width: 100%;
+    }
+
+    &__description {
+        width: 33.33%;
+
+        @media (max-width: $screen-sm) {
+            display: none;
+        }
+        
+        
+        &_small {
+            font-size: 12px;
+            font-weight: 100;
+            letter-spacing: 0.6px;
+            color: $promo_text-color;
+            text-align: center;
+        }
+
+        &_big {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: normal;
+            line-height: 41px;
+        }
+
+    }
+
+    &__contacts {
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        @media (max-width: $screen-xs) {
+            width: 50%;
+        }
+
+    }
+
+    &__phone {
+        margin-bottom: 3px;
+        
+        &_big {
+            font-size: 18px;
+            font-weight: 700;
+            color: $promo_text-color;
+            text-decoration: none;
+
+            @media (max-width: $screen-sm) {
+                font-size: 16px;
+            }
+
+        }
+
+    }
+
+    &__header-button {
+        width: 150px;
+        height: 30px;
+
+        @media (max-width: $screen-xs) {
+            display: none;
+        }
+
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 11px;
+
+        &_big {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            color: $promo_text-color;
+            text-transform: uppercase;
+
+            @media (max-width: $screen-sm) {
+                font-size: 34px;
+            }
+
+            @media (max-width: $screen-xs) {
+                text-align: center;
+            }
+
+        }
+
+    }
+
+    &__subtitle {
+        margin: 0;
+        margin-bottom: 60px;
+
+        &_big {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 0.2px;
+            color: $promo_text-color;
+            text-transform: uppercase;
+
+            @media (max-width: $screen-sm) {
+                font-size: 18px;
+            }
+
+            @media (max-width: $screen-xs) {
+                text-align: center;
+            }
+
+        }
+
+    }
+    
+    &__icons {
+        width: 482px;
+        display: flex;
+        transform: translateX(11px);
+        margin-bottom: 65px;
+
+        @media (max-width: $screen-sm) {
+            display: none;
+        }
+
+    }
+
+    &__icon-wrapper {
+        flex: 1;
+        margin: 0;
+    }
+
+    &__icon {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 19px;
+    }
+
+    &__icon-description {
+        
+        &_small {
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 0.2px;
+            color: $promo_text-color;
+            text-align: center;
+        }
+    
+    }
+
+    &__main-button {
+        width: 300px;
+        height: 50px;
+        margin-bottom: 13px;
+
+        @media (max-width: $screen-xs) {
+            margin: 0 auto;
+            margin-bottom: 13px;
+        }
+
+    }
+
+    &__catalog {
+
+        @media (max-width: $screen-xs) {
+            margin: 0 auto;
+        }
+
+        &_small {
+            font-size: 17px;
+            font-weight: 300;
+            color: $promo_text-color;
+
+            @media (max-width: $screen-sm) {
+                font-size: 15px;
+            }
+
+        }
+
+    }
+
+    &__catalog-link {
+
+        &:hover {
+            @include hover-link;
+        }
+
+        &_big {
+            font-size: 16px;
+            font-weight: 300;
+            color: $promo_text-color;
+            text-transform: uppercase;
+
+            @media (max-width: $screen-sm) {
+                font-size: 14px;
+            }
+
+        }
+
+    }
+
+}

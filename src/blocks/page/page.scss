@@ -1,0 +1,13 @@
+.page {
+
+    &__full {
+        width:100vw;
+        overflow-x: hidden;
+
+        &_overflow {
+            overflow: hidden;
+        }
+        
+    }
+    
+}
