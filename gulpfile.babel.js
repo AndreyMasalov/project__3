@@ -24,7 +24,7 @@ const paths = {
     img: { src: 'src/**/!(favicon)*.+(jpg|jpeg|png|svg|gif)', dest: 'dist' },
     font: { src: 'src/**/*.+(eot|ttf|woff|woff2)', dest: 'dist' },
     favicon: { src: 'src/blocks/favicon/favicon.png' }
-}
+};
 
 // Параметры сжатия изображений
 const imageMinimizerOptions = [
@@ -32,7 +32,7 @@ const imageMinimizerOptions = [
     ['optipng', { optimizationLevel: 5 }],
     ['gifsicle', { interlaced: true }],
     ['svgo', { plugins: [{ removeViewBox: false, collapseGroups: true }]}]
-]
+];
 
 // Очистка директории dist
 function clear() {
@@ -57,7 +57,9 @@ function html() {
             },
             plugins: [
                 new htmlWebpackPlugin({ template: './src/main/main.html', filename: 'index.html' }),
-                new faviconsWebpackPlugin({ logo: paths.favicon.src, cache: true, prefix: 'favicon/', inject: htmlPlugin => basename(htmlPlugin.options.filename) === 'index.html' }),
+                new faviconsWebpackPlugin({ logo: paths.favicon.src, 
+                                            cache: true, prefix: 'favicon/', 
+                                            inject: htmlPlugin => basename(htmlPlugin.options.filename) === 'index.html' }),
                 new imageMinimizerWebpackPlugin({ minimizerOptions: { plugins: imageMinimizerOptions }}),
                 new ignoreEmitWebpackPlugin(/\.js?$/)
             ]
@@ -90,7 +92,9 @@ function css() {
                             { loader: miniCssExtractPlugin.loader, options: { esModule: false }},
                             { loader: 'css-loader?url=false'},
                             { loader: 'postcss-loader', options: { postcssOptions: { plugins: [ 'autoprefixer' ]}}},
-                            { loader: 'sass-loader', options: { webpackImporter: false, sassOptions: { includePaths: ['node_modules'], outputStyle: 'compressed' }}}
+                            { loader: 'sass-loader', options: { 
+                                webpackImporter: false, sassOptions: { includePaths: ['node_modules'], outputStyle: 'compressed' }
+                            }}
                         ]
                     }
                 ]

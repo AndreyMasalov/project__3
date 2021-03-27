@@ -29,7 +29,9 @@ function modal() {
         button.addEventListener('click', () => {
             let textRus = cardTitle[index].textContent.substring(0 , cardTitle[index].textContent.indexOf(' '));
             let textEng = cardTitle[index].textContent.substring(cardTitle[index].textContent.indexOf(' '));
-            catalogModal.querySelector('div.modal__description').innerHTML = `${textRus}<span class="modal__description modal__description_big font font_museo-moderno">${textEng}</span>`;
+            let mergedText = `${textRus}<span class="modal__description modal__description_big font font_museo-moderno">${textEng}</span>`;
+
+            catalogModal.querySelector('div.modal__description').innerHTML = mergedText;
             page.classList.add('page__full_overflow');
             catalogModal.classList.add('modal_active');
             catalogModal.querySelector('.modal__window').classList.add('modal__window_active');

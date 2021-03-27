@@ -10,7 +10,7 @@ import smoothscroll from 'smoothscroll-polyfill';
 
 // Импорт скриптов
 import * as promo from '../blocks/promo/promo.js';
-import * as form from '../blocks/form/form.js'
+import * as form from '../blocks/form/form.js';
 import * as modal from '../blocks/modal/modal.js';
 import * as slider from '../blocks/slider/slider.js';
 import * as catalog from '../blocks/catalog/catalog.js';

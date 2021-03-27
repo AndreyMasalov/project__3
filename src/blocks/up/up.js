@@ -1,6 +1,6 @@
 // Обращение к элементам
 const upBlock = document.querySelector('.up');
-const upLink = document.querySelector('.up__link')
+const upLink = document.querySelector('.up__link');
 
 // Главная функция
 function up() {

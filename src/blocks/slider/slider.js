@@ -10,15 +10,26 @@ const slidesCount = slides.length;
 // Функция, которая устанавливает позицию трека
 function setPosition(position) {
     slideTrack.style.transform = `translateX(${position}px)`;
-};
+}
 
 // Функция, которая проверяет кнопки управления
 function checkButtons(position, slidesToShow, slideWidth) {
+
     // Если позиция трека = 0, тогда скрыть кнопку влево, иначе показать кнопку влево
-    position === 0 ? slidePrev.hidden = true : slidePrev.hidden = false;
+    if (position === 0) {
+        slidePrev.hidden = true;
+    } else {
+        slidePrev.hidden = false;
+    }
+
     // Если позиция трека установлена на предпоследнем слайде, тогда скрыть кнопку вправо, иначе показать кнопку вправо
-    position <= -(slidesCount - slidesToShow) * slideWidth ? slideNext.hidden = true : slideNext.hidden = false;
-};
+    if (position <= -(slidesCount - slidesToShow) * slideWidth) {
+        slideNext.hidden = true;
+    } else {
+        slideNext.hidden = false;
+    }
+
+}
 
 // Главная функция
 function slider(parameters) {
@@ -70,9 +81,11 @@ function slider(parameters) {
     });
 
     slideNext.addEventListener('click', () => {
-        // Вычисление, сколько осталось слайдов (общее количество слайдов - (модуль текущей позиции трека + количество отображаемых слайдов * ширину слайда) / ширину слайда)
+        // Вычисление, сколько осталось слайдов 
+        // (общее количество слайдов - (модуль текущей позиции трека + количество отображаемых слайдов * ширину слайда) / ширину слайда)
         const slidesLeft = slidesCount - (Math.abs(position) + slidesToShow * slideWidth) / slideWidth;
-        // Если, позиция трека - количество оставшихся слайдов >= количеству слайдов, которое нужно прокрутить, тогда прокрутить на значение смещения слайдов, иначе прокрутить на количество оставшихся слайдов * ширину слайда
+        // Если, позиция трека - количество оставшихся слайдов >= количеству слайдов, которое нужно прокрутить, 
+        // тогда прокрутить на значение смещения слайдов, иначе прокрутить на количество оставшихся слайдов * ширину слайда
         position -= slidesLeft >= slidesToScroll ? movePosition : slidesLeft * slideWidth;
 
         setPosition(position);
@@ -83,7 +96,8 @@ function slider(parameters) {
     slidePrev.addEventListener('click', () => {
         // Вычисление, сколько осталось слайдов (модуль текущей позиции трека / ширину слайда) 
         const slidesLeft = Math.abs(position) / slideWidth;
-        // Если, позиция трека + количество оставшихся слайдов >= количеству слайдов, которое нужно прокрутить, тогда прокрутить на значение смещения слайдов, иначе прокрутить на количество оставшихся слайдов * ширину слайда
+        // Если, позиция трека + количество оставшихся слайдов >= количеству слайдов, которое нужно прокрутить, 
+        // тогда прокрутить на значение смещения слайдов, иначе прокрутить на количество оставшихся слайдов * ширину слайда
         position += slidesLeft >= slidesToScroll ? movePosition : slidesLeft * slideWidth;
 
         setPosition(position);
@@ -93,7 +107,7 @@ function slider(parameters) {
 
     // Макрозадача, которая выполнится сразу после завершения всех других задач
     setTimeout(() => slideTrack.classList.add('slider__track_transition'), 0);
-};
+}
 
 // Экспорт функции
 export { slider };
